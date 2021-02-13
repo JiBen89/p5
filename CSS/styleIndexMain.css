@@ -1,0 +1,69 @@
+#langages
+{
+	padding-bottom: 1%;
+	padding-top: 1%;
+}
+#head
+{
+	background-image:  url(../images/benbanner.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	min-height: 800px;
+}
+#benC{
+	text-align: center;
+	padding-top: 20%;
+}
+#skills
+{
+	padding-top: 8%;
+	padding-bottom: 5%;
+}
+.nav-link{
+    color: white;
+	background-color: black;
+}
+#competances
+{
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+#logoTools
+{
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+.opacityChanged
+{
+	background-color: blanchedalmond;
+	opacity: 0.2;
+}
+nav
+{
+	color: white;
+}
+footer
+{
+color: black;
+	padding: 2%;
+}
+footer.h5
+{
+	color: black;
+}
+.light
+{
+	color: white;
+}#formation
+{
+	padding-top: 2%;
+}
+#experience 
+{
+	padding: 1%;
+}
+body
+{
+	background-color: black;
+}

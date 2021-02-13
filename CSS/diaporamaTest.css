@@ -1,0 +1,58 @@
+#slider{
+    width:90%;
+    max-height: 600px; 
+    position: relative;
+    margin-left: 2%;
+}
+
+.diapo {
+    width: 96%;
+    height: auto;
+    max-height: 500px;
+}
+#formulaire{
+    margin-top: 2%;
+    margin-left: 2%;
+    width: 500px;
+    height: 500px;
+    text-indent: 5%;
+    text-align: left;
+    border-style: solid;
+    border-color: black;
+    border-radius: 20%;
+    border-width: 3px;
+    }
+#mapid {
+    border-style: solid;
+    border-color: black;
+    border-radius: 3%;
+    border-width: 3px;
+    height: 600px;
+    width: 600px;
+    margin-top: 2%;
+}
+#conteneur{
+    display: flex;
+    flex-wrap: wrap;
+}
+#btn-reserve{
+    display: none;
+    padding-left: 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+#canvas{
+    display: block;
+    margin-left: 17%;
+    border: 3px solid #000;
+    border-radius: 5%;
+}
+#bt-clear{
+    margin-left: 50%;
+}
+#block-canvas{
+    display: none;
+}
+#resa{
+    width: 100%; 
+}
