@@ -14,13 +14,10 @@ try {
                 } else {
                     echo 'les deux mots de passe ne sont pas indentiques <a href="index.php?action=inscriptionView"> retour ici </a>';
                 }
-            }
+            }}
     } else {
         landing();
-    }}
+    }
 }catch (Exception $e) {
     echo 'Erreur : ' . $e->getMessage();
 }
-
-    
-

@@ -11,13 +11,12 @@
 
 <body>
     <header>
+    <button type="button" class="btn btn-light"><a href="index.php">Accueil</a></button>
             <?php
             if (empty($_SESSION['pseudo'])) {
                 echo '<div class="text-center" id="landingConnect">
                     <button type="button" class="btn btn-dark"><a href="index.php?action=inscription" class="text-white">Inscription</a></button>' .
-                    '<button type="button" class="btn btn-dark"><a href="index.php?action=connection" class="text-white">Connexion</a></button>' .
-                    '<button type="button" class="btn btn-light"><a href="index.php">Accueil</a></button>
-                    </div>';
+                    '<button type="button" class="btn btn-dark"><a href="index.php?action=connection" class="text-white">Connexion</a></button></div>';
             } else {
                 echo '<p class="text-right text-light"> Bonjour ' . $_SESSION['pseudo'] . ' ' . ' <a href="index.php?action=disconect" class="text-light"> (déconexion) </a></br></p>';
                 echo '<div class="navbar-expand navbar-dark ">

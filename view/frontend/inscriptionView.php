@@ -1,18 +1,21 @@
 <?php $title = "Inscription"; ?>
 <?php ob_start(); ?>
-<div class="container" id="inscriptionCtn">
-    <h2>Inscription</h2>
+<div class="container" id="connectionCtn">
+
     <div class="container" id="inscriptionCtn">
         <form action="index.php?action=inscriptionPost" method="post"> 
             <!--  action => inscriptionPost
                 post : pseudo, pass, passCheck, email
             -->
+            <h2>Inscription</h2>
             <div class="row">
                 <div class="col champ">
                     <label for="pseudo">Pseudo</label>
                 </div>
                 <div class="col-lg-3 champ">
                     <input type="text" id="pseudo" name="pseudo" />
+                </div>
+                <div class="col-lg-3 champ">
                 </div>
             </div>
             <div class="row">
@@ -22,6 +25,8 @@
                 <div class="col-lg-3 champ">
                     <input id="pass" type="password" name="pass" />
                 </div>
+                <div class="col-lg-3 champ">
+                </div>
             </div>
             <div class="row">
                 <div class="col champ">
@@ -29,6 +34,8 @@
                 </div>
                 <div class="col-lg-3 champ">
                     <input id="passCheck" type="password" name="passCheck" />
+                </div>
+                <div class="col-lg-3 champ">
                 </div>
             </div>
             <div class="row">
@@ -38,6 +45,9 @@
                 <div class="col-lg-3 champ">
                     <input id="mail" type="email" name="mail" />
                 </div>
+                <div class="col-lg-3 champ">
+                </div>
+            </div>    
                 <div class="row">
                     <div class="col-6">
                     </div>
