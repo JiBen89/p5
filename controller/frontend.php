@@ -29,11 +29,40 @@ function addUser($pseudo, $pass, $mail)
         header('Location: index.php');
     }
 }
+function connectUser($pseudo, $pass)
+{
+    $connectUser = new UserManager();
+    $userData = $connectUser->getUser($pseudo);
+    if (!empty($userData)){
+        $isPasswordCorrect = password_verify($pass, $userData['pass']);
+        if ($isPasswordCorrect){
+            $_SESSION['idUser'] = $userData['id'];
+            $_SESSION['pseudo'] = $userData['pseudo'];
+            $_SESSION['adm'] = $userData['adm'];
+            header('Location: index.php' );
+        }
+    }
+        else {
+            echo 'Mauvais mot de passe !';
+        }
+}
+function takePicture()
+{
+    require('view/frontend/webcamView.php');
+}
 function getConnectionView()
 {
     require('view/frontend/connectionView.php');
 }
+function choseKind()
+{
+    require("view/frontend/kindOfPixView.php");
+}
 function landing()
 {
     require("view/frontend/landingView.php");
+}
+function getWhyView()
+{
+    require("view/frontend/whyView.php");
 }

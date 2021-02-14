@@ -46,9 +46,9 @@ class UserManager extends Manager
      */
     public function getUser($pseudo)
     {
-        $db = $this->dbConnect();                                                   // connect to the database
-        $req = $db->prepare('SELECT id, pseudo, pass, adm FROM users WHERE pseudo = ?'); // we get the data for the user conection with the pseudo
-        $req->execute(array($pseudo));                                              // we the collected data id, pseudo & pass in $req
+        $db = $this->dbConnect();                                                           // connect to the database
+        $req = $db->prepare('SELECT id, pseudo, pass, adm FROM users WHERE pseudo = ?');     // we get the data for the user conection with the pseudo
+        $req->execute(array($pseudo));                                                       // we the collected data id, pseudo & pass in $req
             $result = $req->fetch();                                        
 
             return $result;

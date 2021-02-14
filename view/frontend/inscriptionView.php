@@ -4,9 +4,6 @@
 
     <div class="container" id="inscriptionCtn">
         <form action="index.php?action=inscriptionPost" method="post"> 
-            <!--  action => inscriptionPost
-                post : pseudo, pass, passCheck, email
-            -->
             <h2>Inscription</h2>
             <div class="row">
                 <div class="col champ">

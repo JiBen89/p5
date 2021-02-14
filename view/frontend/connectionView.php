@@ -4,7 +4,7 @@
 
     <div class="container" id="connection">
     <h2>Connexion</h2>
-        <form action="index.php?action=connectionPost" method="post">
+        <form action="index.php?action=connectUser" method="post">
             <div class="row">
             <div class="col-lg-3 champ">
                 </div>
