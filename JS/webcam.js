@@ -1,20 +1,18 @@
 
-
     const webcamElement = document.getElementById('webcam');
     const canvasElement = document.getElementById('canvas');
     const snapSoundElement = document.getElementById('snapSound');
     const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement);
 
-    webcam.start()
-        .then(result => {
+    let btnOn = document.getElementById('camOn');
+    let btnOff = document.getElementById('camOff');
+    let btnShoot = document.getElementById('shoot');
+
+    btnOn.addEventListener("click", function () {
+        webcam.start();
             console.log("webcam started");
         })
-        .catch(err => {
-            console.log(err);
-        });
 
-        let btnShoot = getElementById('shootMe');
-        btnShoot.addEventListener("click", function () {
-            webcam.snap();
-            document.querySelector('#download-photo').href = "images/";
-            }
+    btnOff.addEventListener("click", function () {
+        webcam.stop();
+        })

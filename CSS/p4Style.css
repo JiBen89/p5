@@ -1,7 +1,3 @@
-#landingConnect
-{
-    padding: auto;
-}
 .champ
 {
     padding-top: 1%;
@@ -33,5 +29,11 @@
 {
     width: 100px;
 }
-
-
+#type
+{
+margin: 2%;
+}
+#camOn
+{
+    display: block;
+}

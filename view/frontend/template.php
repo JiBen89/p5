@@ -14,38 +14,27 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Photo</a></li>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Actu</a></li>
-                        <li><a href="index.php?action=why">Info</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    </ul>
-                </div>
-            </div>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.php">PixedEvo</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.php?action=why">Utilité </a></li>
+                <?php if (!empty($_SESSION['pseudo'])){
+                    echo '<li class="nav-item"><a class="nav-link" href="index.php?action=takePicture">Photo </a></li>';
+                }
+                if (empty($_SESSION['pseudo'])) {
+                    echo '
+        <li class="nav-item"><a class="nav-link text-right" href="index.php?action=inscription">Inscription</a></li>
+        <li class="nav-item"><a class="nav-link text-right" href="index.php?action=connection">Connection</a></li>';
+                } else {
+                    echo $_SESSION['pseudo'] . '<li class="nav-item"><a class="nav-lin text-danger" href="index.php?action=disconect" id="deco"> (déconexion) </a></li>';
+                }
+                ?>
+            </ul>
+        </nav>
+        </div>
     </header>
-    <?php
-    if (!empty($_SESSION['pseudo'])) {
-        echo '<button type="button" class="btn" id="photo"><a href="index.php?action=takePicture"><img src="images/photo.png" alt="camera"></a></button>';
-    }
-    ?>
-    <?php
-    if (empty($_SESSION['pseudo'])) {
-        echo '<div class="text-center" id="landingConnect">
-                    <button type="button" class="btn btn-dark"><a href="index.php?action=inscription" class="text-white">Inscription</a></button>' .
-            '<button type="button" class="btn btn-dark"><a href="index.php?action=connection" class="text-white">Connexion</a></button></div>';
-    } else {
-        echo $_SESSION['pseudo'];
-        echo '<a href="index.php?action=disconect" class="text-danger"> (déconexion) </a></br></p>';
-    }
-    ?>
+
     <?= $content ?>
 </body>
 
