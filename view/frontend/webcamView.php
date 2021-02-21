@@ -20,8 +20,8 @@
     <audio id="snapSound" src="audio/snap.wav" preload="auto"></audio>
     </div>
 </div>
-
-
+<div class="container"></div>
+<img id="photo" src="" style="width: 460px; height: 300px, diplay: none">photo</img>
 
 
 <script language="JAVASCRIPT" src="JS/webcam.js"></script>

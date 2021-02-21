@@ -12,7 +12,12 @@
         webcam.start();
             console.log("webcam started");
         })
-
     btnOff.addEventListener("click", function () {
         webcam.stop();
         })
+
+    btnShoot.addEventListener("click", function () {
+        let photo = webcam.snap();
+        document.getElementById('photo').src= photo;
+        })
+
