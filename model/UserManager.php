@@ -53,4 +53,21 @@ class UserManager extends Manager
 
             return $result;
     }
+    /**
+     * get the avatar of the user
+     *
+     * @param text $pseudo
+     * @param text $avatar
+     * @return array
+     */
+    public function getAvatar($id, $avatarWay)
+    {
+        $db = $this->dbConnect();    
+        $req = $db->prepare('UPDATE users SET avatar = :avatar WHERE id = :pseudo ');  
+        $req ->execute(array(
+        'avatar' => $avatarWay,
+        'pseudo' => $id  
+        ));
+        return $req;
+    }
 }

@@ -1,23 +1,15 @@
+Webcam.set({
+    width: 490,
+    height: 390,
+    image_format: 'png',
+    jpeg_quality: 90
+});
 
-    const webcamElement = document.getElementById('webcam');
-    const canvasElement = document.getElementById('canvas');
-    const snapSoundElement = document.getElementById('snapSound');
-    const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement);
+Webcam.attach( '#my_camera' );
 
-    let btnOn = document.getElementById('camOn');
-    let btnOff = document.getElementById('camOff');
-    let btnShoot = document.getElementById('shoot');
-
-    btnOn.addEventListener("click", function () {
-        webcam.start();
-            console.log("webcam started");
-        })
-    btnOff.addEventListener("click", function () {
-        webcam.stop();
-        })
-
-    btnShoot.addEventListener("click", function () {
-        let photo = webcam.snap();
-        document.getElementById('photo').src= photo;
-        })
-
+function take_snapshot() {
+    Webcam.snap( function(data_uri) {
+        $(".image-tag").val(data_uri);
+        document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+    } );
+}

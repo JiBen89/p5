@@ -1,0 +1,26 @@
+.champ
+{
+    padding-top: 1%;
+}
+#envoyer
+{
+    margin-left: 0%;
+    margin-top: 1%;
+}
+
+.kindOfPics
+{
+    width: 100px;
+}
+#type
+{
+margin: 2%;
+}
+#camOn
+{
+    display: block;
+}
+#sendPicture
+{
+    display: none;
+}

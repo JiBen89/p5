@@ -2,29 +2,33 @@
 <?php ob_start(); ?>
 <div class="text-center">
     <div class="row" id="type">
-    <h1>Ta photo sera rangé dans la catégorie : <?php echo $_GET['action'] ?> </h1>
-    </div>
-</div>
-<div class="text-center container">
-    <div class="text-center row"> 
-
-    <button type="button" class="btn btn-primary col" id="camOn">On</button>
-    <button type="button" class="btn btn-danger col" id="camOff">Off</button>
-    <button type="button" class="btn btn-dark col" id="shoot">Shoot</button>
+        <h1> </h1>
     </div>
 </div>
 <div class="container">
-    <div class="row">
-    <video id="webcam" autoplay playsinline width="640" height="480"></video>
-    <canvas id="canvas" class="d-none"></canvas>
-    <audio id="snapSound" src="audio/snap.wav" preload="auto"></audio>
-    </div>
+    <h1 class="text-center">Ta photo sera rangé dans la catégorie : <?php echo $_GET['action'] ?></h1>
+    <form method="POST" action="index.php?action=storeImage">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="my_camera"></div>
+                <br />
+                <input type=button value="Shot me bad-boy" onClick="take_snapshot()">
+                <input type="hidden" name="image" class="image-tag">
+                <input id="kindOf" type="hidden" name="kindOf" value="<?php echo $_GET['action'] ?>" />
+                <input id="idUser" type="hidden" name="idUser" value="<?php echo $_SESSION["idUser"] ?>" />
+            </div>
+            <div class="col-md-6">
+                <div id="results">Aperçu</div>
+            </div>
+            <div class="col-md-12 text-center">
+                <br />
+                <button class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    </form>
 </div>
-<div class="container"></div>
-<img id="photo" src="" style="width: 460px; height: 300px, diplay: none">photo</img>
-
-
 <script language="JAVASCRIPT" src="JS/webcam.js"></script>
+
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

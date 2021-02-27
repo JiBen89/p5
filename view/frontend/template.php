@@ -5,13 +5,17 @@
     <meta name="pixedevo" content="text/html; charset=utf-8" />
     <title><?= $title ?></title>
     <link rel="stylesheet" type="text/css" href="CSS/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="CSS/p4Style.css">
+    <link rel="stylesheet" type="text/css" href="CSS/pixedevo.css">
     <link rel="icon" type="image/png" href="images/logo.png" />
-    <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
+    <style type="text/css">
+        #results { padding:20px; border:1px solid; background:#ccc; }
+    </style>
 </head>
 
 <body>
-
     <header>
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -20,7 +24,8 @@
                     <li class="nav-item"><a class="nav-link" href="index.php?action=why">Utilité </a></li>
                 <?php if (!empty($_SESSION['pseudo'])) {
                 echo '<li class="nav-item"><a class="nav-link" href="index.php?action=takePicture">Photo </a></li>' .
-                    '<li class="nav-item"><a class="nav-link text-danger" href="index.php?action=disconect"> (déconexion) </a></li>';
+                    '<li class="nav-item"><a class="nav-link" href="index.php?action=profil">Profile </a></li>' .
+                    '<li class="nav-item"><a class="nav-link text-danger" href="index.php?action=disconect"> (déconexion) </a></li>' ;
                     }
                     if (empty($_SESSION['pseudo'])) {
                         echo '
@@ -34,6 +39,7 @@
     </header>
 
     <?= $content ?>
+    
 </body>
 
 </html>

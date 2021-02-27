@@ -1,5 +1,6 @@
 <?php
 require_once('model/UserManager.php');
+require_once('model/PicsManager.php');
 
 function getInscriptionView()
 {
@@ -46,6 +47,26 @@ function connectUser($pseudo, $pass)
             echo 'Mauvais mot de passe !';
         }
 }
+function updateAvatar($id ,$avatarWay) 
+{
+    $avatar = new UserManager();
+
+    $avatarPicture  = $avatar->getAvatar($id, $avatarWay);
+    return $avatarPicture;
+}
+
+function sendPicsToDb($fileName, $kindOfpicture, $idUser, $privat)
+{
+    $pictureIndb = new PicsManager();
+    $pix = $pictureIndb->sendPicture($fileName, $kindOfpicture, $idUser, $privat);
+    return $pix;
+
+}
+
+function getProfilView()
+{
+    require('view/frontend/profilView.php');
+}
 function takePicture()
 {
     require('view/frontend/webcamView.php');
@@ -65,4 +86,8 @@ function landing()
 function getWhyView()
 {
     require("view/frontend/whyView.php");
+}
+function getStoreImageView()
+{
+    require("view/frontend/storeImage.php");
 }
