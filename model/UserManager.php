@@ -60,14 +60,12 @@ class UserManager extends Manager
      * @param text $avatar
      * @return array
      */
-    public function getAvatar($id, $avatarWay)
+    public function setAvatar($avatarWay, $id)
     {
+        var_dump($avatarWay, $id);
         $db = $this->dbConnect();    
-        $req = $db->prepare('UPDATE users SET avatar = :avatar WHERE id = :pseudo ');  
-        $req ->execute(array(
-        'avatar' => $avatarWay,
-        'pseudo' => $id  
-        ));
+        $req = $db->prepare('UPDATE users SET avatar = ? WHERE id = ?');  
+        $req ->execute(array($avatarWay, $id));
         return $req;
     }
 }

@@ -36,7 +36,7 @@ try {
             getWhyView();
         } elseif ($_GET['action'] == 'takePicture') {
             choseKind();
-        }elseif (($_GET['action'] == 'landscapePix') || ($_GET['action'] == 'bodyPix') || ($_GET['action'] == 'facePix') || ($_GET['action'] == 'worksPix')|| ($_GET['action'] == 'worksPix')){
+        }elseif (($_GET['action'] == 'landscapePix') || ($_GET['action'] == 'bodyPix') || ($_GET['action'] == 'facePix') || ($_GET['action'] == 'worksPix')|| ($_GET['action'] == 'freePix')){
             takePicture();
         } elseif ($_GET['action'] == 'profil') {
             getProfilView();
@@ -54,7 +54,7 @@ try {
                             $avatarWay = $way ;
                             $id = $_SESSION['idUser'];
                             updateAvatar( $id, $avatarWay );
-                            header('Location: index.php');
+                            header('Location: index.php?action=profil');
                         }else{
                             echo "fichier non importé";} 
                     } else {
@@ -72,7 +72,9 @@ try {
                     getProfilView();
                 } else { 
                     echo "pas d'images reçus";
-            }}
+            } }elseif ($_GET['action'] == 'myPics'){
+                getMyPicsView($_SESSION['idUser']);                                    // page  >> myPicsView
+            }
     } else {
         landing();
     }

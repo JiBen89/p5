@@ -19,7 +19,6 @@ ob_start(); ?>
 
             $file = $folderPath . $fileName;
             file_put_contents($file, $image_base64);
-            print_r($fileName);
             ?>
             <h2>Cette Photo vous convient-elle ?</2h>
         </div>
@@ -30,7 +29,7 @@ ob_start(); ?>
         <div class="col">
             <img src="<?php echo $file = $folderPath . $fileName; ?>">
             <form action="index.php?action=sendToDb" method="POST">
-                <input id="KindPix" type="text" name="kindOf" value="<?php echo $_POST['kindOf'] ?>" />        
+                <input id="KindPix" type="hidden" name="kindOf" value="<?php echo $_POST['kindOf'] ?>" />        
                 <input id="pixName" type="hidden" name="fileName" value="<?php echo $fileName ?>" />        
                 <button value="submit" class="btn btn-success">YES !</button>
             </form>

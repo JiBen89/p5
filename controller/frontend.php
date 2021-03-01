@@ -47,11 +47,11 @@ function connectUser($pseudo, $pass)
             echo 'Mauvais mot de passe !';
         }
 }
-function updateAvatar($id ,$avatarWay) 
+function updateAvatar($avatarWay , $id) 
 {
+    var_dump($avatarWay, $id);
     $avatar = new UserManager();
-
-    $avatarPicture  = $avatar->getAvatar($id, $avatarWay);
+    $avatarPicture  = $avatar->setAvatar($avatarWay, $id);
     return $avatarPicture;
 }
 
@@ -59,8 +59,26 @@ function sendPicsToDb($fileName, $kindOfpicture, $idUser, $privat)
 {
     $pictureIndb = new PicsManager();
     $pix = $pictureIndb->sendPicture($fileName, $kindOfpicture, $idUser, $privat);
-    return $pix;
 
+    if ($pix === false) {
+        throw new Exception('Impossible de charger les photos ' );
+    }
+}
+function getFiveFacePics()
+{
+    $pictures = new PicsManager();
+    $allFacesPics = $pictures->getFiveFacePics();
+    
+    require("view/frontend/landingView.php");
+    return $allFacesPics;
+}
+function getMyPicsView($idUser)
+{
+    $pictures = new PicsManager();
+    $pix = $pictures->getPictures($idUser);
+
+    require('view/frontend/myPicsView.php');
+    return $pix;
 }
 
 function getProfilView()
@@ -79,10 +97,6 @@ function choseKind()
 {
     require("view/frontend/kindOfPixView.php");
 }
-function landing()
-{
-    require("view/frontend/landingView.php");
-}
 function getWhyView()
 {
     require("view/frontend/whyView.php");
@@ -90,4 +104,8 @@ function getWhyView()
 function getStoreImageView()
 {
     require("view/frontend/storeImage.php");
+}
+function landing()
+{
+    getFiveFacePics();
 }

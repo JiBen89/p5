@@ -14,6 +14,22 @@ class PicsManager extends Manager
                 'privat' => $privat
             ));
             return $affectedLines;
-
         } 
+
+        public function getPictures($idUser)
+        {
+            $db = $this->dbConnect();
+            $allPics = $db->prepare('SELECT pictureName, kindOfPicture, creation_date FROM photos WHERE id_user = ? ORDER BY creation_date DESC');
+            $data = $allPics->execute(array($idUser));
+
+            return $data;
+        }
+
+        public function getFiveFacePics()
+        {
+            $db = $this->dbConnect();
+            $allFaces = $db->query('SELECT pictureName, kindOfPicture, creation_date FROM photos ORDER BY creation_date DESC LIMIT 0,100');
+
+            return $allFaces;
+        }
 }

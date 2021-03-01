@@ -2,7 +2,7 @@ Webcam.set({
     width: 490,
     height: 390,
     image_format: 'png',
-    jpeg_quality: 90
+    jpeg_quality: 100
 });
 
 Webcam.attach( '#my_camera' );
@@ -13,3 +13,4 @@ function take_snapshot() {
         document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
     } );
 }
+

@@ -4,15 +4,14 @@
 <head>
     <meta name="pixedevo" content="text/html; charset=utf-8" />
     <title><?= $title ?></title>
-    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="CSS/pixedevo.css">
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.css">
+
     <link rel="icon" type="image/png" href="images/logo.png" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
-    <style type="text/css">
-        #results { padding:20px; border:1px solid; background:#ccc; }
-    </style>
+
 </head>
 
 <body>

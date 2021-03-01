@@ -1,26 +1,11 @@
-.champ
+#landing img
 {
-    padding-top: 1%;
+width: 100%;
 }
-#envoyer
+.pix
 {
-    margin-left: 0%;
-    margin-top: 1%;
-}
-
-.kindOfPics
-{
-    width: 100px;
-}
-#type
-{
-margin: 2%;
-}
-#camOn
-{
-    display: block;
-}
-#sendPicture
-{
-    display: none;
+    background-color: rgb(233, 233, 233);
+    border: 2px;
+    border-color: rgb(58, 58, 58);
+    border-style: solid;
 }
