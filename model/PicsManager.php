@@ -20,15 +20,14 @@ class PicsManager extends Manager
         {
             $db = $this->dbConnect();
             $allPics = $db->prepare('SELECT pictureName, kindOfPicture, creation_date FROM photos WHERE id_user = ? ORDER BY creation_date DESC');
-            $data = $allPics->execute(array($idUser));
-
-            return $data;
+            $allPics->execute(array($idUser));
+            return $allPics;
         }
 
         public function getFiveFacePics()
         {
             $db = $this->dbConnect();
-            $allFaces = $db->query('SELECT pictureName, kindOfPicture, creation_date FROM photos ORDER BY creation_date DESC LIMIT 0,100');
+            $allFaces = $db->query('SELECT pictureName, kindOfPicture, creation_date FROM photos WHERE privat = 0 ORDER BY creation_date DESC LIMIT 0,100');
 
             return $allFaces;
         }

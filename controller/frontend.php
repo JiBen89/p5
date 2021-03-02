@@ -75,10 +75,11 @@ function getFiveFacePics()
 function getMyPicsView($idUser)
 {
     $pictures = new PicsManager();
-    $pix = $pictures->getPictures($idUser);
+    $data = $pictures->getPictures($idUser);
 
     require('view/frontend/myPicsView.php');
-    return $pix;
+    return $data;
+
 }
 
 function getProfilView()

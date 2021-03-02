@@ -68,11 +68,15 @@ try {
                 getStoreImageView();
             } elseif ($_GET['action'] == 'sendToDb') {
                 if(!empty($_POST['fileName'])){
-                    sendPicsToDb($_POST['fileName'],  $_POST['kindOf'], $_SESSION['idUser'], 0);
+                if($_POST['private'] == 1 ){
+                    sendPicsToDb($_POST['fileName'],  $_POST['kindOf'], $_SESSION['idUser'], 1);
                     getProfilView();
-                } else { 
+                } else {
+                sendPicsToDb($_POST['fileName'],  $_POST['kindOf'], $_SESSION['idUser'], 0);
+                getProfilView();
+                }} else { 
                     echo "pas d'images reçus";
-            } }elseif ($_GET['action'] == 'myPics'){
+            }}elseif ($_GET['action'] == 'myPics'){
                 getMyPicsView($_SESSION['idUser']);                                    // page  >> myPicsView
             }
     } else {

@@ -29,8 +29,9 @@ ob_start(); ?>
         <div class="col">
             <img src="<?php echo $file = $folderPath . $fileName; ?>">
             <form action="index.php?action=sendToDb" method="POST">
-                <input id="KindPix" type="hidden" name="kindOf" value="<?php echo $_POST['kindOf'] ?>" />        
-                <input id="pixName" type="hidden" name="fileName" value="<?php echo $fileName ?>" />        
+                <label for="private">Private picture ?</label><input id="private" type="checkbox" name="private" value="1">
+                <input id="KindPix" type="hidden" name="kindOf" value="<?php echo $_POST['kindOf'] ?>" />
+                <input id="pixName" type="hidden" name="fileName" value="<?php echo $fileName ?>" />
                 <button value="submit" class="btn btn-success">YES !</button>
             </form>
             <a href="index.php?action=takePicture"><button value="retake" class="btn btn-danger">No-way I want another one !</button></a>

@@ -21,10 +21,10 @@
                 <a class="navbar-brand" href="index.php">PixedEvo</a>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="index.php?action=why">Utilité </a></li>
-                <?php if (!empty($_SESSION['pseudo'])) {
-                echo '<li class="nav-item"><a class="nav-link" href="index.php?action=takePicture">Photo </a></li>' .
-                    '<li class="nav-item"><a class="nav-link" href="index.php?action=profil">Profile </a></li>' .
-                    '<li class="nav-item"><a class="nav-link text-danger" href="index.php?action=disconect"> (déconexion) </a></li>' ;
+                    <?php if (!empty($_SESSION['pseudo'])) {
+                        echo '<li class="nav-item"><a class="nav-link" href="index.php?action=takePicture">Photo </a></li>' .
+                            '<li class="nav-item"><a class="nav-link" href="index.php?action=profil">Profile </a></li>' .
+                            '<li class="nav-item"><a class="nav-link text-danger" href="index.php?action=disconect"> (déconexion) </a></li>';
                     }
                     if (empty($_SESSION['pseudo'])) {
                         echo '
@@ -36,9 +36,10 @@
             </nav>
         </div>
     </header>
-
     <?= $content ?>
-    
+    <div class="container"> 
+        <footer>Copyright Tout Droit Réservé Mozzap Corporation benjamincalmet@gmail.com to contact me</footer>
+    </div>
 </body>
 
 </html>
