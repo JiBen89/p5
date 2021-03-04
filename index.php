@@ -2,7 +2,7 @@
 
 use function PHPSTORM_META\elementType;
 
-require('controller/frontend.php');
+require('app/controller/frontend.php');
 
 session_start();
 try {
@@ -51,7 +51,7 @@ try {
                 if ($_FILES['avatar']['size'] <= $sizeMax) {
                     $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
                     if (in_array($extensionUpload, $extentisonValid)) {
-                        $way = "member/avatar/" . $_SESSION['idUser'] . '.' . $extensionUpload;
+                        $way = "app/member/avatar/" . $_SESSION['idUser'] . '.' . $extensionUpload;
                         $result = move_uploaded_file($_FILES['avatar']['tmp_name'], $way);
                         if ($result) {
                             $avatarWay = $way;
@@ -85,8 +85,8 @@ try {
         } elseif ($_GET['action'] == 'myPics'){
             getMyPicsView($_SESSION['idUser']);
     }} else {
-        landing();
-    }
+            landing();
+        }
 } catch (Exception $e) {
     echo 'Erreur : ' . $e->getMessage();
 }

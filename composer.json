@@ -1,0 +1,8 @@
+{
+    "name": "ben/j",
+    "require": {},
+	"autoload": {
+		"psr-4" : {
+		"app\\" : "app"}
+	}
+}
