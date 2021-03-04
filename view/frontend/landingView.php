@@ -1,6 +1,5 @@
 <?php $title = "hello"; ?>
 <?php ob_start(); ?>
-
 <div class="container text-center" id="landing">
     <div class="row">
         <h2>Last Pix</h2>

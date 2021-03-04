@@ -14,3 +14,10 @@ function take_snapshot() {
     } );
 }
 
+let btnShoot = document.getElementById("btnShoot");
+let btnSubmit = document.getElementById("btnSubmit");
+
+btnSubmit.style.display= "none";
+btnShoot.addEventListener("click", function () {
+    btnSubmit.style.display= "block";
+} )

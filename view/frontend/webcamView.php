@@ -12,8 +12,10 @@
             <div class="col-md-6">
                 <div id="my_camera"></div>
                 <br />
-                <input id="shootMe" type=button value="Shot me bad-boy" onClick="take_snapshot()">
+                
                 <input type="hidden" name="image" class="image-tag">
+                <i class="fas fa-camera"><input id="btnShoot" type=button value="Shot me bad-boy" class="camera2" onClick="take_snapshot()"></i>
+                <i class="fas fa-stopwatch"></i>
                 <input id="kindOf" type="hidden" name="kindOf" value="<?php echo $_GET['action'] ?>" />
                 <input id="idUser" type="hidden" name="idUser" value="<?php echo $_SESSION["idUser"] ?>" />
             </div>
@@ -22,7 +24,7 @@
             </div>
             <div class="col-md-12 text-center">
                 <br />
-                <button class="btn btn-success" id="btnSubmit">Submit</button>
+                <button class="btn btn-success" id="btnSubmit">Envoyer</button>
             </div>
         </div>
     </form>

@@ -8,7 +8,7 @@
             $pixDate = $faces['creation_date'];
             $pixType = $faces['kindOfPicture'];
             $pixNameWay = "upload/" . $pixName;
-            echo "<div class=\"col-2\">
+            echo "<div class=\"col\">
             <img src=" . $pixNameWay . ">" 
             . $pixDate . "<br/>"
             . "#" . $pixType . "</div>";

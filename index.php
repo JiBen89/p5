@@ -9,6 +9,8 @@ try {
     if (isset($_GET['action'])) {
         if ($_GET['action'] == 'inscription') {
             getInscriptionView();
+        } elseif ($_GET['action'] == 'meteo') {
+            getMeteoView();
         } elseif ($_GET['action'] == 'inscriptionPost') {
             if (!empty($_POST['pseudo']) && !empty($_POST['pass']) && !empty($_POST['mail'])) {
                 if ($_POST['pass'] === $_POST['passCheck']) {
@@ -21,6 +23,8 @@ try {
                 echo 'il faut remplir tous les champs d\'inscription pour envoyer à la base de deonnés';
             }
         } elseif ($_GET['action'] == 'connection') {
+            getConnectionView();
+        } elseif ($_GET['action'] == 'meteo') {
             getConnectionView();
         } elseif ($_GET['action'] == 'connectUser') {
             if (!empty($_POST['pseudo']) && !empty($_POST['pass'])) {
@@ -36,50 +40,51 @@ try {
             getWhyView();
         } elseif ($_GET['action'] == 'takePicture') {
             choseKind();
-        }elseif (($_GET['action'] == 'landscapePix') || ($_GET['action'] == 'bodyPix') || ($_GET['action'] == 'facePix') || ($_GET['action'] == 'worksPix')|| ($_GET['action'] == 'freePix')){
+        } elseif (($_GET['action'] == 'landscapePix') || ($_GET['action'] == 'bodyPix') || ($_GET['action'] == 'facePix') || ($_GET['action'] == 'worksPix') || ($_GET['action'] == 'freePix')) {
             takePicture();
         } elseif ($_GET['action'] == 'profil') {
             getProfilView();
         } elseif ($_GET['action'] == 'setAvatar') {
-            if(isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])){
+            if (isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])) {
                 $sizeMax = 2097152;
-                $extentisonValid = array('jpg','jpeg', 'gif', 'png');
-                if ($_FILES['avatar']['size'] <= $sizeMax){
-                    $extensionUpload = strtolower(substr( strrchr($_FILES['avatar']['name'],'.'), 1));
-                    if(in_array($extensionUpload, $extentisonValid)){
-                        $way = "member/avatar/" . $_SESSION['idUser'] .'.' . $extensionUpload;
+                $extentisonValid = array('jpg', 'jpeg', 'gif', 'png');
+                if ($_FILES['avatar']['size'] <= $sizeMax) {
+                    $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
+                    if (in_array($extensionUpload, $extentisonValid)) {
+                        $way = "member/avatar/" . $_SESSION['idUser'] . '.' . $extensionUpload;
                         $result = move_uploaded_file($_FILES['avatar']['tmp_name'], $way);
-                        var_dump($way);
-                        if ($result){
-                            $avatarWay = $way ;
+                        if ($result) {
+                            $avatarWay = $way;
                             $id = $_SESSION['idUser'];
-                            updateAvatar( $id, $avatarWay );
+                            updateAvatar($id, $avatarWay);
                             header('Location: index.php?action=profil');
-                        }else{
-                            echo "fichier non importé";} 
+                        } else {
+                            echo "fichier non importé";
+                        }
                     } else {
                         echo "taille de l'image trop importante";
+                    }
                 }
-                }
-                } else {
-                    echo "pas de fichier sélectionné" ;             //la photo ne doit pas dépasser 2 méga octet";
-                } 
-            } elseif ($_GET['action'] == 'storeImage') {
-                getStoreImageView();
-            } elseif ($_GET['action'] == 'sendToDb') {
-                if(!empty($_POST['fileName'])){
-                if($_POST['private'] == 1 ){
+            } else {
+                echo "pas de fichier sélectionné";             //la photo ne doit pas dépasser 2 méga octet";
+            }
+        } elseif ($_GET['action'] == 'storeImage') {
+            getStoreImageView();
+        } elseif ($_GET['action'] == 'sendToDb') {
+            if (!empty($_POST['fileName'])) {
+                if (isset($_POST['private'])) {
                     sendPicsToDb($_POST['fileName'],  $_POST['kindOf'], $_SESSION['idUser'], 1);
                     getProfilView();
                 } else {
-                sendPicsToDb($_POST['fileName'],  $_POST['kindOf'], $_SESSION['idUser'], 0);
-                getProfilView();
-                }} else { 
-                    echo "pas d'images reçus";
-            }}elseif ($_GET['action'] == 'myPics'){
-                getMyPicsView($_SESSION['idUser']);                                    // page  >> myPicsView
+                    sendPicsToDb($_POST['fileName'],  $_POST['kindOf'], $_SESSION['idUser'], 0);
+                    getProfilView();
+                }
+            } else {
+                echo "pas d'images reçus";
             }
-    } else {
+        } elseif ($_GET['action'] == 'myPics'){
+            getMyPicsView($_SESSION['idUser']);
+    }} else {
         landing();
     }
 } catch (Exception $e) {

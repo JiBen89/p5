@@ -69,7 +69,7 @@ function getFiveFacePics()
     $pictures = new PicsManager();
     $allFacesPics = $pictures->getFiveFacePics();
     
-    require("view/frontend/landingView.php");
+    require('view/frontend/landingView.php');
     return $allFacesPics;
 }
 function getMyPicsView($idUser)
@@ -79,7 +79,11 @@ function getMyPicsView($idUser)
 
     require('view/frontend/myPicsView.php');
     return $data;
+}
 
+function getMeteoView()
+{
+    require('view/frontend/meteoView.php');
 }
 
 function getProfilView()
