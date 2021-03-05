@@ -53,11 +53,11 @@ function connectUser($pseudo, $pass)
 
 function updateAvatar($avatarWay , $id) 
 {
-    var_dump($avatarWay, $id);
     $avatar = new UserManager();
     $avatarPicture  = $avatar->setAvatar($avatarWay, $id);
     return $avatarPicture;
 }
+
 
 function sendPicsToDb($fileName, $kindOfpicture, $idUser, $privat)
 {
@@ -102,15 +102,21 @@ function getMyPicsView($idUser)
     return $data;
 }
 
+function getUserInfo($idUser)
+{
+    $userInfos = new UserManager();
+    $userData = $userInfos->getUserData($idUser);
+    $userInfos = $userData->fetch();
+
+    require('app/view/frontend/profilView.php');
+    return $userInfos;
+}
+
 function getMeteoView()
 {
     require('app/view/frontend/meteoView.php');
 }
 
-function getProfilView()
-{
-    require('app/view/frontend/profilView.php');
-}
 function takePicture()
 {
     require('app/view/frontend/webcamView.php');

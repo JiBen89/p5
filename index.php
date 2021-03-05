@@ -43,7 +43,7 @@ try {
         } elseif (($_GET['action'] == 'landscapePix') || ($_GET['action'] == 'bodyPix') || ($_GET['action'] == 'facePix') || ($_GET['action'] == 'worksPix') || ($_GET['action'] == 'freePix')) {
             takePicture();
         } elseif ($_GET['action'] == 'profil') {
-            getProfilView();
+            getUserInfo($_SESSION['idUser']) ;
         } elseif ($_GET['action'] == 'setAvatar') {
             if (isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])) {
                 $sizeMax = 2097152;
@@ -56,7 +56,7 @@ try {
                         if ($result) {
                             $avatarWay = $way;
                             $id = $_SESSION['idUser'];
-                            updateAvatar($id, $avatarWay);
+                            updateAvatar($avatarWay,  $id);
                             header('Location: index.php?action=profil');
                         } else {
                             echo "fichier non importé";
@@ -74,10 +74,10 @@ try {
             if (!empty($_POST['fileName'])) {
                 if (isset($_POST['private'])) {
                     sendPicsToDb($_POST['fileName'],  $_POST['kindOf'], $_SESSION['idUser'], 1);
-                    getProfilView();
+                    header('Location: index.php?action=profil');
                 } else {
                     sendPicsToDb($_POST['fileName'],  $_POST['kindOf'], $_SESSION['idUser'], 0);
-                    getProfilView();
+                    header('Location: index.php?action=profil');
                 }
             } else {
                 echo "pas d'images reçus";
