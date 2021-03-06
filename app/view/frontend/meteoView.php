@@ -21,7 +21,7 @@
 
 <div class="col-12 col-sm-6 my-3">
 </div>
-<script language="JAVASCRIPT" src="JS/meteo.js"></script>
+<script language="JAVASCRIPT" src="app/JS/meteo.js"></script>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

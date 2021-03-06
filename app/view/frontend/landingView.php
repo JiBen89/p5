@@ -2,16 +2,16 @@
 <?php ob_start(); ?>
 
 <div class="container" id="landing">
-    <div class="row">
+    <div class="row my-3">
         <h2>Last Pix</h2>
 
         <?php
         while ($faces  =  $allFacesPics->fetch()) :
-            $pixName = $faces['pictureName'];
-            $pixDate = $faces['creation_date'];
-            $pixType = $faces['kindOfPicture'];
+            $pixName = htmlspecialchars($faces['pictureName']);
+            $pixDate = htmlspecialchars($faces['creation_date']);
+            $pixType = htmlspecialchars($faces['kindOfPicture']);
             $pixNameWay = "app/upload/" . $pixName;
-            echo "<div class=\"col-2 pix\"> <img src=" . $pixNameWay . ">" . $pixDate . "<br/>" . "#" . $pixType . "</div> ";
+            echo "<div class=\"col-6 col-sm-4 col-lg-2 my-1 pix\"> <img alt=\"picture took by the user\" src=" . $pixNameWay . ">" . $pixDate . "<br/>" . "#" . $pixType . "</div> ";
         endwhile; ?>
     </div>
 </div>

@@ -1,13 +1,30 @@
-Webcam.set({
-    width: 490,
-    height: 390,
-    image_format: 'png',
-    jpeg_quality: 100
-});
 
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    Webcam.set({
+        width: 720,
+        height: 1280,
+        image_format: 'png',
+        jpeg_quality: 100
+    });
+  }else{
+    Webcam.set({
+        width: 490,
+        height: 390,
+        image_format: 'png',
+        jpeg_quality: 100
+    });
+  }
+  
 Webcam.attach( '#my_camera' );
 
 function take_snapshot() {
+    Webcam.snap( function(data_uri) {
+        $(".image-tag").val(data_uri);
+        document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+    } );
+}
+
+function take_snapshot_with_delay() {
     Webcam.snap( function(data_uri) {
         $(".image-tag").val(data_uri);
         document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';

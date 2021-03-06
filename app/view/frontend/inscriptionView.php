@@ -6,50 +6,50 @@
         <form action="index.php?action=inscriptionPost" method="post"> 
             <h2>Inscription</h2>
             <div class="row">
-                <div class="col champ">
+                <div class="col-12 col-sm-6 my-3 ">
                     <label for="pseudo">Pseudo</label>
                 </div>
-                <div class="col-lg-3 champ">
-                    <input type="text" id="pseudo" name="pseudo" />
+                <div class="col-12 col-sm-6 my-3 ">
+                    <input type="text" id="pseudo" name="pseudo"class="col-12 col-sm-10 col-lg-4 my-3" />
                 </div>
-                <div class="col-lg-3 champ">
+                <div class="col-12 col-sm-6 my-3 ">
                 </div>
             </div>
             <div class="row">
-                <div class="col champ">
+                <div class="col-12 col-sm-6 my-3 ">
                     <label for="pass">Mot de passe</label>
                 </div>
-                <div class="col-lg-3 champ">
-                    <input id="pass" type="password" name="pass" />
+                <div class="col-12 col-sm-6 my-3 ">
+                    <input id="pass" type="password" name="pass" class="col-12 col-sm-10 col-lg-4 my-3"/>
                 </div>
-                <div class="col-lg-3 champ">
+                <div class="col-12 col-sm-6 my-3 ">
                 </div>
             </div>
             <div class="row">
-                <div class="col champ">
+                <div class="col-12 col-sm-6 my-3 ">
                     <label for="passCheck">Vérification mot de passe</label>
                 </div>
-                <div class="col-lg-3 champ">
-                    <input id="passCheck" type="password" name="passCheck" />
+                <div class="col-12 col-sm-6 my-3 ">
+                    <input id="passCheck" type="password" name="passCheck" class="col-12 col-sm-10 col-lg-4 my-3"/>
                 </div>
-                <div class="col-lg-3 champ">
+                <div class="col-12 col-sm-6 my-3 ">
                 </div>
             </div>
             <div class="row">
-                <div class="col champ">
+                <div class="col-12 col-sm-6 my-3 ">
                     <label for="mail"> Email</label>
                 </div>
-                <div class="col-lg-3 champ">
-                    <input id="mail" type="email" name="mail" />
+                <div class="col-12 col-sm-6 my-3 ">
+                    <input id="mail" type="email" name="mail" class="col-12 col-sm-10 col-lg-4 my-3"/>
                 </div>
-                <div class="col-lg-3 champ">
+                <div class="col-12 col-sm-6 my-3 ">
                 </div>
             </div>    
                 <div class="row">
                     <div class="col-6">
                     </div>
                     <div class="col">
-                        <input type="submit" class="btn btn-success" id="envoyer" />
+                        <input type="submit" class="btn btn-success" id="envoyer" class="col-12 col-sm-10 col-lg-4 my-3"/>
                     </div>
                 </div>
         </form>
