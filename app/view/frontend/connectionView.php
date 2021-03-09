@@ -8,8 +8,6 @@
             <div class="row justify-content-center">
                 <div class=" col-12 col-sm-6 my-3">
                     <label for="pseudo">Pseudo</label>
-                </div>
-                <div class="col-12 col-sm-6 my-3">
                     <input type="text" id="pseudo" name="pseudo" class="col-12 col-sm-10 col-lg-4  my-3" />
                 </div>
             </div>
@@ -17,8 +15,6 @@
 
                 <div class=" col-12 col-sm-6 my-3 ">
                     <label for="pass">Mot de passe</label>
-                </div>
-                <div class="col-12 col-sm-6 my-3 ">
                     <input id="pass" type="password" name="pass" class="col-12 col-sm-10 col-lg-4 my-3"/>
                 </div>
             </div>
@@ -26,7 +22,7 @@
                 <div class="col-6">
                 </div>
                 <div class="col">
-                    <input type="submit" class="btn btn-success" id="envoyer" />
+                    <input type="submit" class="btn btn-success btn-lg" id="envoyer" />
                 </div>
             </div>
         </form>

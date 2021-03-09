@@ -18,17 +18,18 @@
 <body>
     <header>
         <div class="container-fluid" id="head">
-            <nav class="navbar navbar-expand">
+            <nav class="navbar navbar-expand navbar-dark">
                 <a class="navbar-brand  d-none d-md-block" href="index.php">PixedEvo</a>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link d-none d-md-block" href="index.php?action=why">Utilité </a></li>
-                    <?php if (!empty($_SESSION['pseudo'])):
+
+                    <?php if (!empty($_SESSION['pseudo'])) :
                         echo '<li class="nav-item"><a class="nav-link" href="index.php?action=takePicture"><i class="fas fa-camera"></i> </a></li>' .
                             '<li class="nav-item"><a class="nav-link" href="index.php?action=profil">Profile </a></li>' .
-                            '<li class="nav-item"><a class="nav-link" href="index.php?action=meteo">Meteo</a></li>' .
-                            '<li class="nav-item"><a class="nav-link text-danger" href="index.php?action=disconect"> (déconexion) </a></li>';
+                            '<li class="nav-item"><a class="nav-link d-none d-md-block" href="index.php?action=meteo">Meteo</a></li>' .
+                            '<li class="nav-item"><a class="nav-link" href="index.php?action=disconect"> Déconexion </a></li>';
                     endif;
-                    if (empty($_SESSION['pseudo'])):
+                    if (empty($_SESSION['pseudo'])) :
                         echo '
                     <li class="nav-item"><a class="nav-link text-right" href="index.php?action=inscription">Inscription</a></li>
                     <li class="nav-item"><a class="nav-link text-right" href="index.php?action=connection">Connexion</a></li>';
@@ -39,8 +40,8 @@
         </div>
     </header>
     <?= $content ?>
-    <div class="container"> 
-        <footer>Copyright Tout Droit Réservé Mozzap Corporation benjamincalmet@gmail.com to contact me</footer>
+    <div class="container m-6 footer">
+        <footer id="footer">Copyright Tout Droit Réservé Mozzap Corporation benjamincalmet@gmail.com to contact me</footer>
     </div>
 </body>
 

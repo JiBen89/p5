@@ -1,7 +1,8 @@
+
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     Webcam.set({
-        width: 300,
-        height: 400,
+        width: 690,
+        height: 300,
         image_format: 'png',
         jpeg_quality: 100
     });
@@ -13,7 +14,6 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
         jpeg_quality: 100
     });
   }
-
 Webcam.attach( '#my_camera' );
 
 function take_snapshot() {
@@ -21,17 +21,19 @@ function take_snapshot() {
         $(".image-tag").val(data_uri);
         document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
     } );
-};
+}
 
-let btnShootToo = document.getElementById("btnShootToo");
+function take_snapshot_with_delay() {
+    Webcam.snap( function(data_uri) {
+        $(".image-tag").val(data_uri);
+        document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+    } );
+}
 
-btnShootToo.addEventListener("click", function(){
-    let counter = 5;
-    let interval =  setInterval(function() {
-        counter --;
-        console.log(counter);
-        document.getElementById("bip").innerHTML = counter;
-        if (counter == 0){
-            clearInterval(interval);
-        }},1000);
-});
+let btnShoot = document.getElementById("btnShoot");
+let btnSubmit = document.getElementById("btnSubmit");
+
+btnSubmit.style.display= "none";
+btnShoot.addEventListener("click", function () {
+    btnSubmit.style.display= "block";
+} )

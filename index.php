@@ -62,8 +62,10 @@ try {
                             echo "fichier non importé";
                         }
                     } else {
-                        echo "taille de l'image trop importante";
+                        echo "mauvaise extension de fichier";
                     }
+                } else {
+                    echo "taille de l'image trop importante";
                 }
             } else {
                 echo "pas de fichier sélectionné";             //la photo ne doit pas dépasser 2 méga octet";

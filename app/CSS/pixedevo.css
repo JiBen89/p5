@@ -1,17 +1,9 @@
-#landing img {
+.landing img {
   width: 100%;
 }
-#landing {
+.landing {
   text-align: center;
 }
-.pix {
-  padding: 1%;
-  background-color: rgb(233, 233, 233);
-  border: 2px;
-  border-color: rgb(58, 58, 58);
-  border-style: solid;
-}
-
 .profil img {
   width: 220px;
   background-color: rgb(233, 233, 233);
@@ -19,16 +11,17 @@
   border-color: rgb(58, 58, 58);
   border-style: solid;
 }
-#btnShoot {
+#btnShoot, #btnShootToo {
   background-color: black;
   color: white;
   padding: 20px;
 }
-footer {
-  margin-top: 110%;
-  background-color: rgb(102, 102, 102);
-  bottom: 0px;
-  margin-left: 25%;
+.footer{
+  margin-top: 10%;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  background-color: rgb(141, 141, 141);
 }
 .box-container {
   width: 300px;
@@ -46,7 +39,13 @@ footer {
   color: white;
 }
 #city {
-  background-color: rgba(56, 209, 209, 0.568);
+  background-color: rgba(2, 32, 32, 0.726);
+}
+#connection{
+  font-size: 1.8em;
+}
+#inscriptionCtn{
+  font-size: 1.8em;
 }
 #temp {
   background-color: rgba(134, 233, 233, 0.568);
@@ -60,19 +59,17 @@ footer {
 #currentPageNumber {
   font-size: 1.5em;
   color: white;
-  background-color: rgba(146, 209, 209, 0.568);
+  background-color:  rgba(34, 74, 126, 0.815);
 }
 #paginNumber {
   font-size: 1.2em;
   color: white;
-  background-color: rgba(111, 161, 161, 0.568);
+  background-color:  rgb(71, 125, 196);
 }
-#head{
-  justify-content: center;
-  align-items: center;
+#head {
   font-size: 2em;
   height: 100px;
-  background-color: rgba(146, 209, 209, 0.568);
+  background-color: rgba(34, 74, 126, 0.815);
 }
 .cat{
 
@@ -82,4 +79,21 @@ footer {
 .button_cat{
   width: 100%;
   background-color: rgba(108, 216, 216, 0.39); ;
+}
+#pictureTook{
+  font-size:  2em; ;
+  background-color: rgba(108, 216, 216, 0.39); ;
+  color: rgba(32, 102, 102, 0.568); ;
+}
+.pixIndication{
+  display: none;
+  position: relative;
+  margin-bottom: -50px;
+  color: rgba(55, 95, 207, 0.945);
+  background-color: rgba(216, 216, 216, 0.74);
+}
+.pix:hover  .pixIndication{
+  position: relative;
+  bottom: 50px;
+  display: block;
 }

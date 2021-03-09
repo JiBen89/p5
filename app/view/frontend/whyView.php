@@ -2,7 +2,7 @@
 <?php ob_start(); ?>
 
 <div class="container text-center">
-    <div class="container">
+    <div class="container my-3">
         <div class="row">
             <div class="col">
                 <h3>What is this ?</h3>

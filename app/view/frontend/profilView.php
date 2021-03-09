@@ -12,14 +12,14 @@
             </div>
             <div class="col">
                 <h1>Coucou <?php echo htmlspecialchars($userInfos['pseudo']) ?></h1><br />
-Ici tu trouveras les informations concernant ton profile.<br />
+                Ici tu trouveras les informations concernant ton profile.<br />
                 Tu vas même pouvoir ajouter un avatar! Attention, c'est la seule image que tu pourras uploader sur le site via un fichier annexe, <br />
                 les autres images devront être prises via ta webcam ou la caméra de ton téléphone mobile cellulaire intelligent portatif ! <br />
                 Tu pourras voir ou en est ton évolution et peut être même rentrer d'autre données !
             </div>
-            <div class="row">
+            <div class="row text-center m-5">
                 <div class="col">
-                <a href="index.php?action=myPics">All the pictures taken</a>
+                <a href="index.php?action=myPics" id="pictureTook">All the pictures taken</a>
                 </div>
             </div>
         </div>

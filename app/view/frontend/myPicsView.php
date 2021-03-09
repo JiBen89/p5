@@ -3,14 +3,15 @@
 <div class="container">
     <div class="row profil text-center">
         <?php
-        while ($faces  =  $data->fetch()):
-            $pixName = htmlspecialchars($faces['pictureName']);
-            $pixDate = htmlspecialchars($faces['creation_date']);
-            $pixType = htmlspecialchars($faces['kindOfPicture']);
+        while ($pics  =  $data->fetch()):
+            $pixName = htmlspecialchars($pics['pictureName']);
+            $pixDate = htmlspecialchars($pics['creation_date']);
+            $pixType = htmlspecialchars($pics['kindOfPicture']);
             $pixNameWay = "app/upload/" . $pixName;
             echo "<div class=\"col\">
             <img alt=\"picture took by the user\" src=" . $pixNameWay . ">". $pixDate ."<br/>". "#" . $pixType . "</div>";
         endwhile; ?>
+
     </div>
 </div>
 <?php

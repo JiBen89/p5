@@ -90,7 +90,7 @@ function getAllPics()
     $allFacesPics = $pictures->getAllPics($departure, $pixPerPage);
 
     require('app/view/frontend/landingView.php');
-    return $allFacesPics;
+
 }
 
 function getMyPicsView($idUser)
@@ -99,7 +99,6 @@ function getMyPicsView($idUser)
     $data = $pictures->getPictures($idUser);
 
     require('app/view/frontend/myPicsView.php');
-    return $data;
 }
 
 function getUserInfo($idUser)

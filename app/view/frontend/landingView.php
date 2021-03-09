@@ -1,7 +1,7 @@
 <?php $title = "hello"; ?>
 <?php ob_start(); ?>
 
-<div class="container" id="landing">
+<div class="container landing">
     <div class="row my-3">
         <h2>Last Pix</h2>
 
@@ -11,8 +11,16 @@
             $pixDate = htmlspecialchars($faces['creation_date']);
             $pixType = htmlspecialchars($faces['kindOfPicture']);
             $pixNameWay = "app/upload/" . $pixName;
-            echo "<div class=\"col-6 col-sm-4 col-lg-2 my-1 pix\"> <img alt=\"picture took by the user\" src=" . $pixNameWay . ">" . $pixDate . "<br/>" . "#" . $pixType . "</div> ";
-        endwhile; ?>
+            ?>
+            <div class="col-6 col-sm-4 col-lg-2 my-1 pix"> 
+            <img alt="picture took by the user" src="<?php echo $pixNameWay ?>">
+            <div class="pixIndication">
+            <?= $pixType . "<br/>". $pixDate ?>
+            </div>
+            </div>
+
+        <?php endwhile; ?>
+
     </div>
 </div>
 <div class="container text-center" id="landing">
